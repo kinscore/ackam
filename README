@@ -1,0 +1,23 @@
+ackam: Android camera that automatically captures, stores, and shares
+
+This should be useful in a variety of situations in which getting (and sharing)
+the picture is more important than its quality.
+In some such situations it is also important that not only does the picture go
+to the right place but that it does not go to the wrong place; for this reason
+ackam should also support a number of privacy and protection options;
+see also https://github.com/schlafwandler/EnCam as it shares this goal.
+
+
+This project targets API level 1 for maximum compatibility.
+Any features deprecated in newer APIs should be avoided where possible.
+Where it is not possible to avoid deprecated or newer features or their use is
+more aesthetic than functional, they should be used by reflection.
+
+This project was created using the Android SDK (r15) `android' tool.
+Building requires the Android SDK and Apache ant.
+To build, first create a file `local.properties' containing a line
+sdk.dir=/path/to/android-sdk
+Replacing `/path/to/android-sdk' with the path on your system to the Android SDK
+On GNU/Linux and other Unix-/POSIX-like systems this may be /opt/android-sdk
+On Windows it may be C:\\Program Files\\Android\\android-sdk
+Building is then handled by `ant'.
