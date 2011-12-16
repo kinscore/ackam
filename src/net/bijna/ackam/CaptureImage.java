@@ -3,6 +3,7 @@ package net.bijna.ackam;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.hardware.Camera;
 import android.net.Uri;
@@ -88,6 +89,17 @@ public class CaptureImage extends Activity
 		} catch (IOException ex) {
 			Log.e(TAG, "Failed to store image: " + ex.getMessage());
 		}
+
+		String type = contentResolver.getType(uri);
+		if (type == null || type.equals("")) {
+			Log.d(TAG, "No type; assuming JPEG");
+			type = "image/jpeg";
+		}
+
+		final Intent share = new Intent(Intent.ACTION_SEND);
+		share.setType(type);
+		share.putExtra(Intent.EXTRA_STREAM, uri);
+		startActivity(share);
 
 		finish();
 	}
