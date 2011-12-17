@@ -1,14 +1,49 @@
-ackam: Android camera that automatically captures, stores, and shares
+Ackam: Android camera that automatically captures, stores, and shares
 
 This should be useful in a variety of situations in which getting (and sharing)
 the picture is more important than its quality.
 In some such situations it is also important that not only does the picture go
 to the right place but that it does not go to the wrong place; for this reason
-ackam should also support a number of privacy and protection options;
+Ackam should also support a number of privacy and protection options;
 see also https://github.com/schlafwandler/EnCam as it shares this goal.
 
 
-This project targets API level 1 for maximum compatibility.
+IMPLEMENTED:
+	Automatically capture an image from the camera
+		Preview may or may not show
+	Automatically store image in default external storage
+		This storage is most likely UNENCRYPTED
+		If someone gets your Android device, they get your pictures
+	Automatically share image with default ACTION_SEND
+		This typically requires additional interaction
+TODO:
+	Configurable preview width and height
+	Configurable delay before taking picture
+	Configurable tap screen to take picture before delay
+	Configurable shutter sound/mute
+	Configurable show image or text when picture taken
+	Configurable preview delay
+	Configurable tap screen to cancel store/share
+	Configurable storage location
+		Allowing encrypted and/or temporary storage
+	Configurable share activity
+		Allow extras to enable non-interactive sharing where possible
+
+
+Ackam is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+Ackam is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+Ackam.  If not, see <http://www.gnu.org/licenses/>.
+
+
+This project targets Android API level 1 for maximum compatibility.
 Any features deprecated in newer APIs should be avoided where possible.
 Where it is not possible to avoid deprecated or newer features or their use is
 more aesthetic than functional, they should be used by reflection.
